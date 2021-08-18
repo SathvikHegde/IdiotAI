@@ -11,11 +11,11 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if(message.channel.id != '877421615493828628') return;
-
     if(message.content == '-start') {
         return client.channels.cache.get('877421615493828628').send('Hi!');
     }
+    
+    if(message.channel.id != '877421615493828628') return;
 
     cleverbot(message.content, [precommand, preresponse]).then(response =>{
         message.channel.send(response);
