@@ -21,7 +21,9 @@ client.on('message', message => {
     if(message.channel.id != '877421615493828628') return;
 
     cleverbot(message.content, [precommand, preresponse]).then(response =>{
-        message.channel.send(response);
+        setTimeout(function() {
+            message.channel.send(response);
+        }, 3000);
         precommand = message.content;
         preresponse = response;
     }); 
