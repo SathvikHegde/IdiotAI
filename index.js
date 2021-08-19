@@ -25,7 +25,6 @@ client.on('message', message => {
         }, 3000);
         precommand.push(message.content);
         precommand.push(response);
-        console.log(precommand);
     }); 
 });
 
