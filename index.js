@@ -3,8 +3,7 @@ const client = new Discord.Client();
 
 const cleverbot = require("cleverbot-free");
 
-let precommand;
-let preresponse;
+let precommand = [];
 
 client.once('ready', () => {
     console.log('Bot is online!');
@@ -20,12 +19,12 @@ client.on('message', message => {
     
     if(message.channel.id != '877421615493828628') return;
 
-    cleverbot(message.content, [precommand, preresponse]).then(response =>{
+    cleverbot(message.content, precommand).then(response =>{
         setTimeout(function() {
             message.channel.send(response);
         }, 3000);
-        precommand = message.content;
-        preresponse = response;
+        precommand.push(message.content);
+        precommand.push(response);
     }); 
 });
 
