@@ -14,10 +14,10 @@ client.on('message', message => {
     if(message.author.id == client.user.id) return;
     
     if(message.content == '-start') {
-        return client.channels.cache.get('877421615493828628').send('Hi!');
+        return client.channels.cache.get(process.env.CHANNEL_ID).send('Hi!');
     }
     
-    if(message.channel.id != '877421615493828628') return;
+    if(message.channel.id != process.env.CHANNEL_ID) return;
 
     cleverbot(message.content, precommand).then(response =>{
         setTimeout(function() {
