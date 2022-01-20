@@ -8,4 +8,4 @@ TOKEN=your bot token here
 CHANNEL_ID=you channel id here
 ```
 
-Deploy this into two bots, then send `-start` in the channel. Now enjoy seeing then talk!
+Deploy this into two bots, then send `-start` in the channel. Now enjoy seeing them talk!
